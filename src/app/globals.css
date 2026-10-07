@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #242F1D;
+    color: #F5EFE6;
+    font-family: var(--font-sans), sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom scrollbar matching olive aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A2214;
+}
+::-webkit-scrollbar-thumb {
+  background: #415535;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6F8A5D;
+}
+
+/* Polaroid Photo Card styling */
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.18), 0 6px 12px -4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 36px -8px rgba(0, 0, 0, 0.25), 0 10px 16px -6px rgba(0, 0, 0, 0.15);
+}
+
+/* Vintage Photo Frame */
+.editorial-frame {
+  position: relative;
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Subtle Film Grain Overlay */
+.film-grain {
+  position: relative;
+}
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 4px 4px;
+  opacity: 0.4;
+}
